@@ -1,34 +1,23 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-        int num[]={5,12,14,6,78,19,1,23,26,35,37,7,52,86,47};
-        int i,j,se,sz=num.length;
-        System.out.println("Enter a searching elememt");
-        Scanner obj=new Scanner(System.in);
-        se =obj.nextInt();
-        for(i=0;i<sz-1;i++)
-        {
-            for(j=i+1;j<sz;j++)
-            {
-                if(num[i]>num[j]) {
-                   int temp = num[i];
-                    num[i] = num[j];
-                    num[j] = temp;
-                }
+        int rem,sum=0;
+        for(int i=100;i<1000;i++) {
+           int n=i;
+            while (n > 0) {
+                rem = n % 10;
+                sum = sum + (rem * rem * rem);
+                n = n / 10;
             }
+            if (sum == i) {
+                System.out.println(i);
+            }
+            sum=0;
         }
-        for(i=0;i<sz;i++)
-        {
-            if(num[i]==se)
-            {
-                System.out.println("location no="+(i+1));
-            }
 
-        }
     }
+
 }
 
